@@ -28,3 +28,8 @@ The following metrcis were analyzed using [sql queries](https://github.com/vkinn
 - Weekwise hourly sale data
 - Hourly sale data monthwise
 - Sale data weekday wise
+
+Visualizations:
+
+Here’s a preview of the Power BI dashboard: 
+<img width="950" height="750" alt="coffees shop bi" src="https://github.com/user-attachments/assets/66c854bd-d5a9-434f-b540-c2248684e2ef" />
