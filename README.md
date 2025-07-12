@@ -41,3 +41,5 @@ Based on the analysis and visualizations it was observed that
 - High sales were witnessed during the peak morning hours of 8,9 and 10
 - Coffee category and Barista Espresso product type payed a major role in high sale numbers
 - Hells kitchen topped the locationwise sale contribution chart whereas lower Manhattan ended at the bottom of the chart.
+
+These insights can help in making informed decisions to improve sales, marketing strategies, and overall business performance by optimizing inventory based on high-selling product type to reduce waste and cost.Launching campaigns or making necessary changes around underperforming categories and location, aswell help in planning workforce well in advance to handle sale during peak hour and days.
