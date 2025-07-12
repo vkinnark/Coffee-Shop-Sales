@@ -1,1 +1,2 @@
-# Coffee-Shop-Sales Analysis(SQL + Power BI)
+Coffee-Shop-Sales Analysis(SQL + Power BI)
+
