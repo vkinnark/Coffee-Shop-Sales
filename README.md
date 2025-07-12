@@ -33,3 +33,12 @@ Visualizations:
 
 Here’s a preview of the Power BI dashboard: 
 <img width="950" height="750" alt="coffees shop bi" src="https://github.com/user-attachments/assets/66c854bd-d5a9-434f-b540-c2248684e2ef" />
+
+Insights:
+
+- Based on the analysis and visualizations it was observed that
+- May and June month contribute to highest sale
+- The orders were highest on Monday, Tuesday and Wednesday during the high sale contributing May month
+- High sales were witnessed during the peak morning hours of 8,9 and 10
+- Coffee category and Barista Espresso product type payed a major role in high sale numbers
+- Hells kitchen topped the locationwise sale contribution chart whereas lower Manhattan ended at the bottom of the chart.
