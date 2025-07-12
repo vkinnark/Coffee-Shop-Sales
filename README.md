@@ -4,7 +4,7 @@ This project presents a comprehensive sales analysis for a coffee shop using SQL
 
 Key metrics analyzed:
 
-The following metrcis were analyzed using sql queries
+The following metrcis were analyzed using [sql queries](https://github.com/vkinnark/Coffee-Shop-Sales/blob/main/sql%20queries)
 - Total sale for respective month
 - Difference in sale between selected month and previous month
 - Sum, sale difference, MOM increase/decrease in sale
