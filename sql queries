@@ -1,0 +1,7 @@
+1.Total sale for respective month
+select round(sum(f.transaction_qty * f.unit_price),2) as sale, f.mont
+from
+(select *, extract(month from transaction_date) as mont
+from
+coffee_shop)f
+group by f.mont
