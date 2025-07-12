@@ -11,6 +11,7 @@ This project presents a comprehensive sales analysis for a coffee shop using SQL
 - Present insights through interactive and visually intuitive Power BI dashboards for data-driven decision making.
 
 **Key metrics analyzed:**
+
 The following metrcis were analyzed using [sql queries](https://github.com/vkinnark/Coffee-Shop-Sales/blob/main/sql%20queries)
 - Total sale for respective month
 - Difference in sale between selected month and previous month
@@ -29,6 +30,7 @@ The following metrcis were analyzed using [sql queries](https://github.com/vkinn
 - Sale data weekday wise
 
 **Visualizations:**
+
 Here’s a preview of the Power BI dashboard: 
 <img width="950" height="758" alt="coffees shop bi2" src="https://github.com/user-attachments/assets/37288153-a4d5-49ca-ba9a-38cc2fa88700" />
 
