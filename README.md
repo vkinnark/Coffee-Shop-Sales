@@ -32,11 +32,10 @@ The following metrcis were analyzed using [sql queries](https://github.com/vkinn
 Visualizations:
 
 Here’s a preview of the Power BI dashboard: 
-<img width="950" height="750" alt="coffees shop bi" src="https://github.com/user-attachments/assets/66c854bd-d5a9-434f-b540-c2248684e2ef" />
+<img width="950" height="758" alt="coffees shop bi2" src="https://github.com/user-attachments/assets/37288153-a4d5-49ca-ba9a-38cc2fa88700" />
 
 Insights:
-
-- Based on the analysis and visualizations it was observed that
+Based on the analysis and visualizations it was observed that
 - May and June month contribute to highest sale
 - The orders were highest on Monday, Tuesday and Wednesday during the high sale contributing May month
 - High sales were witnessed during the peak morning hours of 8,9 and 10
