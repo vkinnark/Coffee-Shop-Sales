@@ -18,7 +18,6 @@ The following metrcis were analyzed using sql queries
 - Sale status
 - Sale analysis by order category
 - Top product type analysis based on sale numbers
-- Sale data week day wise
 - Weekwise hourly sale data
 - Hourly sale data monthwise
 - Sale data weekday wise
