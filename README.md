@@ -7,12 +7,11 @@ Key metrics analyzed:
 The following metrcis were analyzed using sql queries
 - Total sale for respective month
 - Difference in sale between selected month and previous month
-- Query altogether for sum, sale difference, MOM increase/decrease in sale
-- Query altogether for total orders, order difference, MOM increase/decrease in orders
-- Query altogether for total quantity, quatity difference, MOM increase/decrease in quantity
+- Sum, sale difference, MOM increase/decrease in sale
+- Total orders, order difference, MOM increase/decrease in orders
+- Total quantity, quatity difference, MOM increase/decrease in quantity
 - Sale analysis weekdays and weekends
 - Daywise total sale, order and quantity
-- Daywise data in rounded form using concat
 - Store location wise analysis of MOM data
 - Month wise average sales
 - Sale status
