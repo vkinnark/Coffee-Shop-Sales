@@ -5,3 +5,162 @@ from
 from
 coffee_shop)f
 group by f.mont
+
+2.Difference in sale between selected month and previous month
+with cte as (select round(sum(f.transaction_qty * f.unit_price),2) as sale, f.mont
+from
+(select *, extract(month from transaction_date) as mont
+from
+coffee_shop)f
+group by f.mont)
+select sale, ifnull(lag(sale) over(),0), round(sale -ifnull(lag(sale) over(),0),2) as salediff
+from
+cte
+
+3. sum, sale difference, MOM increase/decrease in sale
+with cte as (select extract(month from transaction_date) as monthnum, monthname(transaction_date) as month,round(sum(transaction_qty*unit_price)) as sales
+from
+coffee_shop
+group by extract(month from transaction_date), monthname(transaction_date))
+
+select sales, (sales- lag(sales) over(order by monthnum))as salediff,round((sales- lag(sales) over(order by monthnum))/lag(sales) over(order by monthnum)*100,2) as mom_sale
+from
+cte
+
+
+4. Total orders, order difference, MOM increase/decrease in orders
+with cte as(select count(transaction_qty) as orders,extract(month from transaction_date) as month
+from
+coffee_shop
+group by extract(month from transaction_date))
+
+select orders, (orders-ifnull(lag(orders) over(order by month),0)) as orderdiff, round((orders-ifnull(lag(orders) over(order by month),0))/lag(orders) over(order by month)*100,2) as ordermom
+from
+cte
+
+5. Query altogether for total quantity, quatity difference, MOM increase/decrease in quantity
+with cte as(select extract(month from transaction_date) as salemonth,sum(transaction_qty) as totalqty
+from
+coffee_shop
+group by extract(month from transaction_date))
+
+select salemonth,totalqty, (totalqty - ifnull(lag(totalqty) over(),0)) as qtydiff
+,(totalqty - ifnull(lag(totalqty) over(),0))/lag(totalqty) over() *100 as qtymom
+from
+cte
+
+
+6. Sale analysis weekdays and weekends
+with cte as(select month(transaction_date) as mont,dayname(transaction_date), transaction_qty,unit_price, 
+case when dayname(transaction_date) in ('SUNDAY','SATURDAY') then 'weekend' else 'weekday' end as weektype
+from
+coffee_shop)
+
+select mont,weektype,sum(transaction_qty) as total_qty, round(sum(transaction_qty*unit_price),2)as total_sale, count(transaction_qty)as total_order
+from
+cte
+group by weektype,mont
+
+
+7.Daywise total sale, order and quantity
+select transaction_date
+, concat(round(sum(transaction_qty*unit_price)/1000,1),'K') as total_sales
+,concat( round(count(transaction_qty)/1000,1), 'K') as total_orders
+,concat( round(sum(transaction_qty)/1000,1), 'K') as total_qty
+from
+coffee_shop
+group by transaction_date
+
+
+9. Store location wise analysis of MOM data
+select store_location, monthname(transaction_date)
+,round(sum(transaction_qty*unit_price)) as total_sales
+, count(transaction_qty) as total_orders
+, sum(transaction_qty) as total_qty
+from
+coffee_shop
+where monthname(transaction_date) = 'May'
+group by store_location, monthname(transaction_date)
+
+10. Month wise average sales
+with cte as(select monthname(transaction_date) as mon
+, sum(transaction_qty * unit_price)/1000 as totalsales
+from
+coffee_shop
+group by transaction_date)
+
+select concat(round(avg(totalsales),1),'K') as avgsales,mon
+from
+cte
+group by mon
+
+11. Sale status
+with cte as (select transaction_date, round(sum(transaction_qty*unit_price)) as totalsale
+, avg(sum(transaction_qty*unit_price)) over (partition by month(transaction_date) order by month(transaction_date)) as aver
+from
+coffee_shop
+group by transaction_date)
+
+select transaction_date, totalsale,
+case when totalsale > aver then 'Above Average'
+when totalsale < aver then 'Below Average'
+else 'Equal to average'
+end as salestatus
+from
+cte
+
+12. Sale analysis by order category
+select product_category, month(transaction_date)
+,round(sum(transaction_qty*unit_price)) as totalsale
+, count(transaction_qty) as totalorder
+, sum(transaction_qty) as total_qty
+from
+coffee_shop
+where month(transaction_date) =5
+group by product_category, month(transaction_date)
+order by totalsale desc
+
+13. Top product type analysis based on sale numbers
+select product_type, month(transaction_date)
+,round(sum(transaction_qty*unit_price)) as totalsale
+, count(transaction_qty) as totalorder
+, sum(transaction_qty) as total_qty
+from
+coffee_shop
+where month(transaction_date) =5
+group by product_type, month(transaction_date)
+order by totalsale desc
+
+14. Weekwise hourly sale data
+select month(transaction_date)
+,dayofweek(transaction_date)
+,hour(transaction_time)
+,sum(transaction_qty*unit_price) as totalsale
+, count(transaction_qty) as totalorder
+, sum(transaction_qty) as total_qty
+from coffee_shop
+group by dayofweek(transaction_date),hour(transaction_time),month(transaction_date)
+order by month(transaction_date),dayofweek(transaction_date)
+
+15. Hourly sale data monthwise
+select month(transaction_date)
+,hour(transaction_time)
+,sum(transaction_qty*unit_price) as totalsale
+, count(transaction_qty) as totalorder
+, sum(transaction_qty) as total_qty
+from coffee_shop
+group by  month(transaction_date),hour(transaction_time)
+order by  month(transaction_date),hour(transaction_time)
+
+16. Sale data weekday wise
+select dayname(transaction_date)
+,sum(transaction_qty*unit_price) as totalsale
+, count(transaction_qty) as totalorder
+, sum(transaction_qty) as total_qty
+from coffee_shop
+where month(transaction_date) =5
+group by dayname(transaction_date)
+
+
+
+
