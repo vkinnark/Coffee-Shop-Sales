@@ -2,7 +2,7 @@
 
 This project presents a comprehensive sales analysis for a coffee shop using SQL for data transformation and Power BI for data visualization. The goal is to derive actionable insights on sales trends, customer behavior, and operational performance across different time dimensions and store locations
 
-Project Objectives:
+**Project Objectives:**
 - Monitor and compare monthly sales performance, including MoM changes.
 - Track order volume and product quantity sold over time.
 - Identify peak sales hours and distinguish patterns between weekdays and weekends.
@@ -10,8 +10,7 @@ Project Objectives:
 - Determine top-performing products and sales contributors.
 - Present insights through interactive and visually intuitive Power BI dashboards for data-driven decision making.
 
-Key metrics analyzed:
-
+**Key metrics analyzed:**
 The following metrcis were analyzed using [sql queries](https://github.com/vkinnark/Coffee-Shop-Sales/blob/main/sql%20queries)
 - Total sale for respective month
 - Difference in sale between selected month and previous month
@@ -29,12 +28,11 @@ The following metrcis were analyzed using [sql queries](https://github.com/vkinn
 - Hourly sale data monthwise
 - Sale data weekday wise
 
-Visualizations:
-
+**Visualizations:**
 Here’s a preview of the Power BI dashboard: 
 <img width="950" height="758" alt="coffees shop bi2" src="https://github.com/user-attachments/assets/37288153-a4d5-49ca-ba9a-38cc2fa88700" />
 
-Insights:
+**Insights:**
 Based on the analysis and visualizations it was observed that
 - May and June month contribute to highest sale
 - The orders were highest on Monday, Tuesday and Wednesday during the high sale contributing May month
