@@ -2,6 +2,14 @@
 
 This project presents a comprehensive sales analysis for a coffee shop using SQL for data transformation and Power BI for data visualization. The goal is to derive actionable insights on sales trends, customer behavior, and operational performance across different time dimensions and store locations
 
+Project Objectives:
+- Monitor and compare monthly sales performance, including MoM changes.
+- Track order volume and product quantity sold over time.
+- Identify peak sales hours and distinguish patterns between weekdays and weekends.
+- Evaluate sales performance across different store locations and product categories.
+- Determine top-performing products and sales contributors.
+- Present insights through interactive and visually intuitive Power BI dashboards for data-driven decision making.
+
 Key metrics analyzed:
 
 The following metrcis were analyzed using [sql queries](https://github.com/vkinnark/Coffee-Shop-Sales/blob/main/sql%20queries)
